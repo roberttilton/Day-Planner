@@ -1,4 +1,13 @@
 var currentDate = document.getElementById("currentDay");
 
-currentDate.textContent = moment().format("MMM Do, YYYY");
+function timedateUpdate() {
+    currentDate.textContent = moment().format("MMM Do, YYYY" + " " + "hh:mm:ss");
+};
+
+timedateUpdate();
+setInterval(function(){
+    timedateUpdate();
+}, 1000);
+
+
 console.log(moment().format("MMM Do, YYYY"));
