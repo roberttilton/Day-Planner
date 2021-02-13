@@ -10,17 +10,15 @@ function timedateUpdate() {
 
 for (var i = 0; i < confirmButton.length; i++) {
     confirmButton[i].addEventListener("click", function () {
-        var currentText = console.log(this.parentNode.parentNode.children[1].querySelector(".inputField").value)
-
-
+        var currentText = this.parentNode.parentNode.children[1].querySelector(".inputField").value;
         // save text to localStorage 
-
+        localStorage.setItem("userInput", currentText);
     })
 }
 
-
 // get info from local storage and put it in the textArea
-
+var local = localStorage.getItem(userInput);
+userInput.textContent = local;
 
 // function dateColor () {
 //     if (timeDivs = timedateUpdate()) {
